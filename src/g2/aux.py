@@ -38,5 +38,28 @@ def linearconv(x1,x2):
     for i in range(len(x1)):
         for j in range(len(x2)):
             y[i+j] += x1[i]*x2[j]
-    
     return y
+
+#  N = length(x);
+#  y=zeros(1,N); % lo declaro
+
+#   for k = 1:N
+#     for l = 1:N
+#       pos = mod(N+k-l,N)+1; % mod divide por un periodo concreto
+#                             % sumo N para que el mod no de cosas raras por ser negativo.
+#       y(k) += h(l)*x(pos);
+#     endfor
+#   endfor
+# end
+
+
+def circularconv(x,h):
+    N = len(h);
+    y = [0]*N;
+
+    for k in range(N):
+        for l in range(N):
+            pos = (k+l)%N;
+            y[k] += h[l]*x[pos];
+
+    return y;
