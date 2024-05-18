@@ -14,32 +14,38 @@ t1,y1 = aux.square(Tini, Tfin, fs, A, phi, fm)
 t2,y2 = aux.sin(Tini, Tfin, fs, A, phi, fm)
 t3,y3 = aux.ramp(Tini, Tfin, fm)
 
+plt.subplot(3,1,1)
 plt.plot(t1,y1)
-print("midvalue y1: ", aux.midvalue(y1));
-print("maximum y1: ", max(y1));
-print("minimum y1: ", min(y1));
-print("amplitude y1: ", aux.amplitude(y1));
-print("energy y1: ", aux.energy(y1));
-print("power y1: ", aux.power(y1));
-print("skewness y1: ", aux.skewness(y1));
-plt.show()
+print("valor medio y1: ", aux.pnorm(y1,1)/len(y1));
+print("maximo y1: ", max(y1));
+print("minimo y1: ", min(y1));
+print("amplitud y1: ", max(np.abs(y1)));
+print("energia y1: ", aux.pnorm(y1,2)**2);
+print("accion y1: ", aux.pnorm(y1,1));
+print("potencia y1: ", (aux.pnorm(y1,2)**2)/len(y1));
+print("raiz del val cuadratico medio:", np.sqrt(aux.pnorm(y1,2)**2)/len(y1));
 
+
+plt.subplot(3,1,2)
 plt.plot(t2,y2)
-print("midvalue y2: ", aux.midvalue(y2));
-print("maximum y2: ", max(y2));
-print("minimum y2: ", min(y2));
-print("amplitude y2: ", aux.amplitude(y2));
-print("energy y2: ", aux.energy(y2));
-print("power y2: ", aux.power(y2));
-print("skewness y2: ", aux.skewness(y2));
-plt.show()
+print("valor medio y1: ", aux.pnorm(y1,1)/len(y1));
+print("maximo y1: ", max(y1));
+print("minimo y1: ", min(y1));
+print("amplitud y1: ", max(np.abs(y1)));
+print("energia y1: ", aux.pnorm(y1,2)**2);
+print("accion y1: ", aux.pnorm(y1,1));
+print("potencia y1: ", (aux.pnorm(y1,2)**2)/len(y1));
+print("raiz del val cuadratico medio:", np.sqrt(aux.pnorm(y1,2)**2)/len(y1));
 
+plt.subplot(3,1,3)
 plt.plot(t3,y3)
-print("midvalue y3: ", aux.midvalue(y3));
-print("maximum y3: ", max(y3));
-print("minimum y3: ", min(y3));
-print("amplitude y3: ", aux.amplitude(y3));
-print("energy y3: ", aux.energy(y3));
-print("power y3: ", aux.power(y3));
-print("skewness y3: ", aux.skewness(y3));
+print("valor medio y1: ", aux.pnorm(y1,1)/len(y1));
+print("maximo y1: ", max(y1));
+print("minimo y1: ", min(y1));
+print("amplitud y1: ", max(np.abs(y1)));
+print("energia y1: ", aux.pnorm(y1,2)**2);
+print("accion y1: ", aux.pnorm(y1,1));
+print("potencia y1: ", (aux.pnorm(y1,2)**2)/len(y1));
+print("raiz del val cuadratico medio:", np.sqrt(aux.pnorm(y1,2)**2)/len(y1));
+
 plt.show()

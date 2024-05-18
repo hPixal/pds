@@ -15,9 +15,9 @@ t2,y2 = aux.sin(Tini, Tfin, fs, A, phi, fm)
 
 print("fs + fs/2 :" ,aux.signal_inner_product(y1,y2))
 
+plt.subplot(3,1,1)
 plt.plot(t1,y1);
 plt.plot(t2,y2);
-plt.show();
 
 
 t1,y1 = aux.sin(Tini, Tfin, fs, A, 0, fm)
@@ -25,15 +25,16 @@ t2,y2 = aux.sin(Tini, Tfin, fs, A, phi, fm)
 
 print("phi = 0 3.1416:" ,aux.signal_inner_product(y1,y2))
 
+plt.subplot(3,1,2)
 plt.plot(t1,y1);
 plt.plot(t2,y2);
-plt.show();
 
 t1,y1 = aux.sin(Tini, Tfin, fs, A, phi/2, fm)
 t2,y2 = aux.sin(Tini, Tfin, fs, A, phi, fm)
 
 print("phi = 3.1416 3.1416/2:" ,aux.signal_inner_product(y1,y2))
 
+plt.subplot(3,1,3)
 plt.plot(t1,y1);
 plt.plot(t2,y2);
 plt.show();

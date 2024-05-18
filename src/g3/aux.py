@@ -66,12 +66,15 @@ def midvalue(y):
     x = sorted(y)
     return (x[0]+x[len(y)-1])/2;
 
+def mean(y):
+    return sum(y)/len(y);
+
 def maximum(y):
     return max(y);
 
 
 def amplitude(y):
-    return (max(y) - min(y))/2;
+    return max(y);
 
 def energy(y):
     return sum(np.power(y,2))
@@ -85,6 +88,9 @@ def skewness(y):
 def power(y):
     return np.mean(np.power(y,2))
 
+def action(y):
+    return np.sum(abs(y))
+
 def signal_inner_product(x, y):
     return np.dot(x, y)
 
@@ -92,4 +98,17 @@ def mean_squared_error(y_true, y_pred):
     return np.mean((y_pred - y_true) ** 2)
 
 def squared_error(y_true, y_pred):
-    return sum(np.square(y_pred - y_true));
+    err = 0
+    for i in range(len(y_true)):
+        err += (y_pred[i] - y_true[i])**2
+    return err
+
+def pnorm(y, p):
+    return np.power(sum(np.power(np.abs(y), p)), 1/p);
+def legendre(n, x):
+    if n == 0:
+        return 1
+    elif n == 1:
+        return x
+    else:
+        return ((2 * n - 1) * x * legendre(n - 1, x) - (n - 1) * legendre(n - 2, x)) / n
